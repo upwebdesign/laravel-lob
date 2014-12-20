@@ -16,6 +16,8 @@ Then add to the aliases array the following:
 'Lob' => 'Upwebdesign\Lob\Facade',
 ```
 
+Publish config file via `php artisan config:publish upwebdesign/laravel-lob`.
+
 You will now have access to the lob-php classes and methods to make your API calls
 ```php
 Lob::addresses()->verify([
