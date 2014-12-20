@@ -21,6 +21,7 @@ namespace Upwebdesign\Lob;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
+use Lob\Lob;
 
 class LobServiceProvider extends ServiceProvider
 {
@@ -29,12 +30,12 @@ class LobServiceProvider extends ServiceProvider
     {
         $that = $this;
 
-        // $this->app->singleton('lob', function() use ($that) {
-        //     return new \Lob\Lob($this->app['config']->get('services.lob.api_key'));
-        // });
-        $this->app['open-cloud'] = $this->app->share(function($app) {
+        $this->app->singleton('lob', function() use ($that) {
             return new Lob($this->app['config']->get('services.lob.api_key'));
         });
+        // $this->app['open-cloud'] = $this->app->share(function($app) {
+        //     return new Lob($this->app['config']->get('services.lob.api_key'));
+        // });
 
     }
 
@@ -45,16 +46,6 @@ class LobServiceProvider extends ServiceProvider
      */
     public function boot() {
         $this->package('upwebdesign/laravel-lob');
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array();
     }
 
 }
