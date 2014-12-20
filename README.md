@@ -1,4 +1,4 @@
-laravel-usps
+laravel-lob
 ============
 
-Interface for USPS and Laravel
+Interface for Lob and Laravel
