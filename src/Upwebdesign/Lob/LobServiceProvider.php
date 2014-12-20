@@ -30,7 +30,7 @@ class LobServiceProvider extends ServiceProvider
     {
         $that = $this;
         $this->app->singleton('lob', function() use ($that) {
-            return new Lob($this->app['config']->get('laravel-lob::api_key'));
+            return new Lob($this->app['config']->get('laravel-lob::lob.api_key'));
         });
     }
 
