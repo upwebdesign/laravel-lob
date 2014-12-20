@@ -1,4 +1,29 @@
-laravel-lob
+Lob Package for Laravel
 ============
 
-Interface for Lob and Laravel
+Laravel Facade and Service Provider for Lob\Lob
+
+Installation
+---
+To use, simply install the package via Composer and then add the following to your app/config/app.php to the service providers array:
+
+```php
+'Upwebdesign\Lob\LobServiceProvider',
+```
+
+Then add to the aliases array the following:
+```php
+'Lob' => 'Upwebdesign\Lob\Facade',
+```
+
+You will now have access to the lob-php classes and methods to make your API calls
+```php
+Lob::addresses()->verify([
+    'address_line1' => '1234 Sample Address',
+    'address_line2' => '',
+    'address_city' => 'San Francisco',
+    'address_state' => 'CA',
+    'address_zip' => '',
+    'address_country' => 'US'
+])
+```

@@ -29,14 +29,9 @@ class LobServiceProvider extends ServiceProvider
     public function register()
     {
         $that = $this;
-
         $this->app->singleton('lob', function() use ($that) {
             return new Lob($this->app['config']->get('services.lob.api_key'));
         });
-        // $this->app['open-cloud'] = $this->app->share(function($app) {
-        //     return new Lob($this->app['config']->get('services.lob.api_key'));
-        // });
-
     }
 
     /**
